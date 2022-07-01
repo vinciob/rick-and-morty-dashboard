@@ -1,6 +1,6 @@
-/*************************************************************
-This custom hook takes the array links of episode endpoint
-and returns an object with loading status and array with 
+/**********************************************************
+This custom hook takes the array links of episode 
+and returns an object with loading status and an array with 
 episodes info.
 ***********************************************************/
 

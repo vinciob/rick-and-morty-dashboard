@@ -11,8 +11,8 @@ interface HeaderProps{
 function Header({setFavoriteScreen, setPage} : HeaderProps) {
   // GlobalState
   const {
-    favoritesCharacters, // Favorites Array
-    setQuerySearch // set querySearch
+    favoritesCharacters, // Array od IDs
+    setQuerySearch // set query for function that fetch Characters data
   } = useContext(GlobalContext)
 
   function searchHandler(ev : React.ChangeEvent<HTMLInputElement>){

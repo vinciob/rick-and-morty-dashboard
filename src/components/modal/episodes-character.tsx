@@ -11,7 +11,7 @@ function EpisodesCharacter({ episodes }: EpisodesCharacterProps) {
     const {loading, episodes: episodesFetched } = useEpisodes(episodes)
 
     return <div className="modalcharacter__list-episodes">
-        <h3>LIST EPISODE</h3>
+        <h3>LIST EPISODES</h3>
 
         {/* Handle Loading and Error */}
         { loading && <p>Loading...</p>}
@@ -19,7 +19,11 @@ function EpisodesCharacter({ episodes }: EpisodesCharacterProps) {
 
         { !loading && episodesFetched &&  (
             <ul>
-                { episodesFetched.map((episode) => <li key={episode.data.id}><b>{episode.data.name}</b> <em>({episode.data.episode})</em></li> )}
+                { episodesFetched.map((episode) => (
+                    <li key={episode.data.id}>
+                        <b>{episode.data.name}</b> <em>({episode.data.episode})</em>
+                    </li> 
+                ))}
             </ul>
         )} 
     </div>

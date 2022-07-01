@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 // CSS
 import './global.css';
-// Context
+// Provider
 import { GlobalProvider } from './utils/context';
 
 const root = ReactDOM.createRoot(

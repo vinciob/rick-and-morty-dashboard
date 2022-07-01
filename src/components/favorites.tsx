@@ -1,27 +1,24 @@
-import { useState } from 'react'
-// CSS
-import './list-characters.css'
+import { useState, useEffect, useContext } from 'react'
 // Components
 import SingleCharacter from './single-character'
 import Loading from './loading'
 // Context
-import { useContext, useEffect } from 'react'
 import { GlobalContext } from '../utils/context'
 // Utils
 import { getCharacterById, getCharactersByIdArray } from '../utils/apiUtils'
+// CSS
+import './list-characters.css'
 // Types
 import { Character } from '../utils/types'
 interface FavoritesProps{ setFavoriteScreen: React.Dispatch<React.SetStateAction<boolean>>}
 
-
 const Favorites = ( {setFavoriteScreen} : FavoritesProps) => {
-    // Define State
+    // Define States
     const [dataCharacters, setDataCharacters] = useState<Character[] | Character | undefined>(undefined)
     const [isLoading, setIsLoading] = useState<boolean>(false)
     // Global States
     const { favoritesCharacters } = useContext(GlobalContext)
 
-    // Fetch Characters Data by IDs array
     useEffect(()=>{
 
         // If favoriteCharcaters contains a single ID invoke "getCharacterById" function

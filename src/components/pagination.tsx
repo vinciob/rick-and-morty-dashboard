@@ -10,18 +10,20 @@ interface PaginationProps{
 
 function PaginationLink({page, setPage, allPages} : PaginationProps) {
 
-    function prevPage(){ setPage( page - 1 ) }
-    function nextPage(){ setPage( page + 1 ) }
-    
     return <div className="pagination__container wrapper-small">
+        {/* Previous Page Button*/}
         <div className="pagination__prev">
-            {page > 1 ? ( <span onClick={prevPage}>{'<'} Prev page</span> ) : '' }
+            { page > 1 && <span onClick={ () => setPage( page - 1 ) }>{'<'} Prev page</span> }
         </div>
+        
+        {/* Current Page */}
         <div className="pagination__current">
-            <h3>Page {page}</h3>
+            <h3>Page { page }</h3>
         </div>
+        
+        {/* Next Page Button */}
         <div className="pagination__next">
-            {page < allPages ? ( <span onClick={nextPage}>Next page {'>'}</span> ) : '' } 
+            { page < allPages && <span onClick={ () => setPage( page + 1 ) }>Next page {'>'}</span> } 
         </div>
     </div>
 }

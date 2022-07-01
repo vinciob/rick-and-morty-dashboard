@@ -22,9 +22,8 @@ function App() {
   const [ page, setPage ] = useState<number>(1)
   const [ paginationInfo, setPaginationInfo ] = useState<Pagination>()
   const [ favoritesScreen, setFavoriteScreen ] = useState<boolean>(false)
-
-  // Context
-  const {idCharacterSelected, querySearch} = useContext(GlobalContext)
+  // Global States
+  const { idCharacterSelected, querySearch } = useContext(GlobalContext)
 
   useEffect(()=>{
     setIsLoading(true)
@@ -55,7 +54,6 @@ function App() {
           throw new Error("There was an error with API")
         })
     }
-
   }, [page, querySearch])
 
   return (

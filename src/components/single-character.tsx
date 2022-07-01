@@ -9,11 +9,10 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 import type { Character } from '../utils/types'
 interface CharacterData{ characterData: Character }
 
-
-function SingleCharacter({characterData} : CharacterData) {
+function SingleCharacter({ characterData } : CharacterData) {
   // Global States
   const { 
-    setIdCharacterSelected, 
+    setIdCharacterSelected,
     addFavoritesCharacter, 
     removeFavoritesCharacter, 
     favoritesCharacters 
@@ -32,14 +31,16 @@ function SingleCharacter({characterData} : CharacterData) {
       <img src={image} alt={name} />
     </div>
 
-    {/* Name and Buttons */}
+    {/* Info */}
     <div className='single-character__info'>
-
+      
+      {/* Name */}
       <div className="single-character__name">
         <h3>{name}</h3>
         <p>{species}</p>
       </div>
       
+      {/* Buttons */}
       <div className="single-character__buttons">
         <button onClick={() => setIdCharacterSelected(id)}>INFO</button>
 

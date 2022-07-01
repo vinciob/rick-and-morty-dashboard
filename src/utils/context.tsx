@@ -1,30 +1,21 @@
-import React, { createContext, useState } from "react";
-//Type
-export type GlobalContextProps = {
-    idCharacterSelected: null | number,
-    // setIdCharacterSelected: () => void,
-    querySearch: null | string,
-    // setQuerySearch: React.Dispatch<React.SetStateAction<string | null>>,
-    favoritesCharacters: [] | string[],
-    //addFavoritesCharacter: (id:string) => void
-}
+import { createContext, useState } from "react";
 
 // Declare Context
 const GlobalContext = createContext<any>({});
 
-// Define Provider Wrapper and Method
+// Define Provider wrapper and functions
 function GlobalProvider({children} : any) {
-    // define Global States
+    // Define Global States
     const [idCharacterSelected, setIdCharacterSelected] = useState<number | null>(null)
     const [querySearch, setQuerySearch] = useState<string>()
     const [favoritesCharacters, setFavoritesCharacters] = useState<string[]>([])
 
-    // Add character id in favorites array
+    // Add character ID in favorites array
     const addFavoritesCharacter = (id: string) => {
         setFavoritesCharacters( prevState => [...prevState, id] )
     }
 
-    //Remove character id in favorites array
+    //Remove character ID in favorites array
     const removeFavoritesCharacter = (id: string) => {
         setFavoritesCharacters( prevState => prevState.filter(idCharacter => idCharacter !== id) )
     }

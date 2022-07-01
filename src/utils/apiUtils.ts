@@ -4,9 +4,7 @@ const baseUrl = 'https://rickandmortyapi.com/api/'
 // Get Characters by Page
 export async function getCharactersByPage(numberPage: number){
   return axios.get('/character', {
-    params: {
-      page: numberPage
-    },
+    params: { page: numberPage },
     baseURL: baseUrl
   })
 }
@@ -21,10 +19,7 @@ export async function getCharacterById(id: number){
 // Get Characters by query search
 export async function getCharacterByQuery(query: string, page: number){
   return axios.get(`/character/`, {
-    params: {
-      name: query,
-      page: page
-    },
+    params: { name: query, page: page },
     baseURL: baseUrl
   })
 }
@@ -39,7 +34,7 @@ export async function getEpisodes(EpisodesLinks: string[] | undefined){
 
 // Get Characters data by IDs array
 export async function getCharactersByIdArray(idArray : number[]){
-  const queryParameter = idArray.join(',')
+  const queryParameter = idArray.join(',')  // join all IDs in a string
   return axios.get(`/character/${queryParameter}`, {
     baseURL: baseUrl
   })

@@ -1,7 +1,6 @@
-import React from 'react'
 interface ImageCharacterProps{
-    image: string,
-    alt: string
+  image: string,
+  alt: string
 }
 
 function ImageCharacter({ image, alt } : ImageCharacterProps) {
