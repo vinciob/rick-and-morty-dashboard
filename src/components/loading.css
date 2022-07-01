@@ -1,0 +1,27 @@
+.loading__single-character{
+    background-color: #FFF;
+    max-width: 800px;
+    height: 100px;
+    margin: 25px auto;
+    
+    border-radius: 30px;
+}
+.loading__title{
+    width: 230px;
+    height: 30px;
+    background-color: #FFF;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.skeleton{
+    background: linear-gradient(-90deg, #c9c9c9, #f3f3f3 , #c9c9c9);
+    animation: skeleton 2s ease infinite;
+    background-size: 400% 400%;
+}
+
+@keyframes skeleton {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}

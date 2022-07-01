@@ -1,0 +1,18 @@
+.list-characters__container h1{
+    text-align: center;
+    color: #FFF;
+}
+
+.favorites__go-button{
+    font-size: 14px;
+    color: #42b4ca;
+    padding: 8px 15px;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 890px) {
+    .list-characters__container{
+        padding: 0px 20px;
+    }
+}
