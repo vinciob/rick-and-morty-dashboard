@@ -13,7 +13,7 @@ import { Character } from '../../utils/types'
 interface ModalCharacterProps{ id: number }
 
 function ModalCharacter( {id} : ModalCharacterProps) {
-    // States
+    // Define states
     const [ isLoading , setIsLoading ] = useState<boolean>(false)
     const [ characterData, setCharacterData ] = useState<Character>()
     // Global States
@@ -25,10 +25,7 @@ function ModalCharacter( {id} : ModalCharacterProps) {
         setIsLoading(true)
         getCharacterById(id)
         .then(res => {
-            if(res.statusText === "OK"){
-                setCharacterData(res.data)
-                setIsLoading(false)
-            }
+            setCharacterData(res.data)
             setIsLoading(false)
         }).catch( err => { throw new Error("There was an error with API") })
       }, [id])
@@ -39,20 +36,19 @@ function ModalCharacter( {id} : ModalCharacterProps) {
             {/* Close Button */}
             <button className='modalcharacter__close-button' onClick={() => setIdCharacterSelected(null)}>Close</button>
 
-            {isLoading ? (
-                <h1>Loading...</h1>
-            ) : characterData && ( <>
-
+            { isLoading && <h1>Loading...</h1> }
+            { !isLoading && characterData && ( 
+                <>
                 {/* Image */}
                 <ImageCharacter image={characterData.image} alt={characterData.name} />
 
                 {/* Info */}
                 <InfoCharacter data={ characterData } />
-
+                
                 {/* Episodes */}
                 <EpisodesCharacter episodes={characterData.episode}/>
-
-            </> )}
+                </> 
+            )}
         </article>
     </div>
 }
