@@ -19,16 +19,16 @@ function InfoCharacter({data} : InfoCharacterProps) {
     return <div className="modalcharacter__info">
       {/* Name */}
       <span>Name</span>
-      <h1>{data.name}</h1>
+      <h1 data-testid={'character-name'}>{data.name}</h1>
 
       {/* Info */}
       <ul>
-        <li>Status: <b>{ data.status }</b></li>
-        <li>Species: <b>{ data.species }</b></li>
-        { data.type && <li>Type: <b>{ data.type }</b></li> }
-        <li>Gender: <b>{ data.gender }</b></li>
-        <li>Origin: <b>{ data.origin.name }</b></li>
-        <li>Location: <b>{ data.location.name }</b>
+        <li data-testid={'character-status'}>Status: <b>{ data.status }</b></li>
+        <li data-testid={'character-species'}>Species: <b>{ data.species }</b></li>
+        { data.type && <li data-testid={'character-type'}>Type: <b>{ data.type }</b></li> }
+        <li data-testid={'character-gender'}>Gender: <b>{ data.gender }</b></li>
+        <li data-testid={'character-origin'}>Origin: <b>{ data.origin.name }</b></li>
+        <li data-testid={'character-location'}>Location: <b>{ data.location.name }</b>
         </li>
       </ul>
       

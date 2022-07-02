@@ -28,7 +28,7 @@ function SingleCharacter({ characterData } : CharacterData) {
     
     {/* Image */}
     <div className="single-character__image">
-      <img src={image} alt={name} />
+      <img src={image} alt={name} data-testid={'character-image'}/>
     </div>
 
     {/* Info */}
@@ -36,8 +36,8 @@ function SingleCharacter({ characterData } : CharacterData) {
       
       {/* Name */}
       <div className="single-character__name">
-        <h3>{name}</h3>
-        <p>{species}</p>
+        <h3 data-testid={'character-name'}>{name}</h3>
+        <p data-testid={'character-species'}>{species}</p>
       </div>
       
       {/* Buttons */}

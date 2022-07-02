@@ -4,7 +4,6 @@ import Cookies from 'universal-cookie';
 // Declare Context
 const GlobalContext = createContext<any>({});
 
-
 // Define Provider wrapper and functions
 function GlobalProvider({children} : any) {
     // Cookie
@@ -13,8 +12,7 @@ function GlobalProvider({children} : any) {
     // Define Global States
     const [idCharacterSelected, setIdCharacterSelected] = useState<number | null>(null)
     const [querySearch, setQuerySearch] = useState<string>()
-    const [favoritesCharacters, setFavoritesCharacters] = useState<number[] | []>(cookieFavorites)
-    
+    const [favoritesCharacters, setFavoritesCharacters] = useState<number[] | []>(cookieFavorites)   
 
     // Add character ID in favorites array
     const addFavoritesCharacter = (id: number) => {
@@ -31,18 +29,15 @@ function GlobalProvider({children} : any) {
             
             return favoritesArray
         })
-    }
-                
+    }          
 
     //Remove character ID in favorites array
     const removeFavoritesCharacter = (id: number) => {
         const favoritesArray = favoritesCharacters.filter( (idCharacter: number) => idCharacter !== id)
         
         // Handle Cookie
-        const now = new Date()
         cookies.set('favorites', favoritesArray, { 
             path: '/' ,
-            //expires: new Date(now.getTime() + 1000000000),
             sameSite: true
         });
         
