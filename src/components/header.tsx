@@ -29,7 +29,7 @@ function Header({setFavoriteScreen, setPage} : HeaderProps) {
 
       {/* Logo */}
       <div className='logo-container'>
-        <img src="/logo.svg" alt="Rick and Morty Logo" />
+        <img src="logo.svg" alt="Rick and Morty Logo" />
       </div>
 
       {/* Search input */}
