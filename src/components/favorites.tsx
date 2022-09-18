@@ -81,4 +81,5 @@ const Favorites = ( {setFavoriteScreen} : FavoritesProps) => {
   </div>
 }
 
+
 export default Favorites
